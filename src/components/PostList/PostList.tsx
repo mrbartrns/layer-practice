@@ -1,5 +1,6 @@
+import React, { useEffect } from 'react';
 import usePost from '@hooks/usePost';
-import { useEffect } from 'react';
+import Post from '@components/Post';
 
 const PostList: React.FC = () => {
   const [posts, getPosts, removePost] = usePost();
@@ -11,11 +12,7 @@ const PostList: React.FC = () => {
   return (
     <ul>
       {posts.map((post) => (
-        <li key={post.Id}>
-          <div>{post.UserId}</div>
-          <div>{post.Title}</div>
-          <div>{post.Body}</div>
-        </li>
+        <Post key={post.Id} post={post} onClickButton={removePost} />
       ))}
     </ul>
   );
