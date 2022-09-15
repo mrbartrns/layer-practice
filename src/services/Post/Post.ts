@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { PostResponse } from '@/api/post';
 
 class Post {
